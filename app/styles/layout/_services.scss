@@ -1,0 +1,70 @@
+.services{
+    padding-top: 10rem;
+    padding-bottom: 7rem;
+    &-list{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+    }
+    &-item{
+        padding: 50px 30px;
+        @include flexBox(flex,row,center,center);
+    }
+    &-item:nth-child(1),
+    &-item:nth-child(2),
+    &-item:nth-child(3){
+        border-bottom:1px solid rgba($title-color,0.3)
+    }
+
+    &-icon{
+        padding:15px 30px;
+        @include flexBox(center);
+        color:$third-color;
+        font-size: 2rem;
+    }
+    &-content{
+        @include flexBox(flex-end,"",column);
+        &-title{
+            font-size: 1.4rem;
+            font-weight: 700;
+            text-transform:uppercase;
+            margin-bottom: 1.5rem;
+        }
+        &-description{
+            font-size: 15;
+            color:rgba($text-color,0.7)
+        }
+    }
+    .block-header{
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+    @include maxWidth(1230px){
+        &-item:not(:nth-child(999)){
+            border-bottom:0;
+        }
+        &-list{
+            grid-template-columns: repeat(2,1fr);
+        }
+        &-item:nth-child(1),
+        &-item:nth-child(2),
+        &-item:nth-child(3),
+        &-item:nth-child(4){
+            border-bottom:1px solid rgba($title-color,0.3)
+        }
+    }
+    @include maxWidth(767px){
+        &-item:not(:nth-child(999)){
+            border-bottom:1px solid rgba($title-color,0.3);
+        }
+        &-item:first-child{
+            border-top:1px solid rgba($title-color,0.3)
+        }
+        &-list{
+            grid-template-columns: 100%;
+        }
+        .block-header{
+            padding-bottom: 4rem;
+        }
+        padding-top:5rem;
+    }
+}

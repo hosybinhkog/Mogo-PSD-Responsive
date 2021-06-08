@@ -1,0 +1,7 @@
+.brands{
+    padding:8rem 0;
+    @include bgc($gray-color-bg);
+    @include maxWidth(767px){
+        padding:3rem 0;
+    }
+}

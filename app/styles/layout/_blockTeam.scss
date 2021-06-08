@@ -1,0 +1,84 @@
+.blockTeam{
+    padding:10rem 0;
+    @include bgc($white-color);
+   
+    &-list{
+        @include flexBox(space-between);
+    }
+    &-item{
+        width: calc(33.33% - 20px);
+    }
+    &-main img{
+        width: 100%;
+        height: 47rem;
+        object-fit: cover;
+    }
+    &-info{
+        padding:3rem 1.5rem;
+        text-align: center;
+        height: calc(100% - 47rem);
+        @include flexBox(space-between,center,column)
+    }
+    &-name{
+        text-transform: uppercase;
+        padding-bottom: 1.5rem;
+        font-weight: 500;
+        line-height: 1.4;
+        display:-webkit-box;
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 1;
+        width: 100%;
+        max-width: 100%;
+        white-space: pre-wrap;
+        word-break: break-all;
+    }
+    &-position{
+        font-size: 1.5rem;
+        font-weight: 300;
+        font-style: italic;
+    }
+    &-social{
+        @include flexBox(center,center);
+        &-item:not(:first-child){
+            border-left: 1px solid $primary-color;
+        }
+    }
+    &-social-link{
+        @include flexBox(center,center);
+        width: 6rem;
+        height: 6rem;
+        color:$primary-color;
+        font-size: 2rem;
+        @include bgc($secondary-color);
+        transition: all 0.2s linear;
+        &:hover{
+            color:$white-color;
+            @include bgc($primary-color);
+        }
+    }
+    @include maxWidth(1023px){
+        padding: 5rem 0;
+        &-list{
+            @include touchSlider(55%);
+        }
+        &-image{
+            width: 100%;
+        }
+    }
+    @include maxWidth(767px){
+        padding: 3rem 0;
+        &-list{
+            @include touchSlider(90%);
+        }
+        &-image{
+            height: 40rem;
+            width: 100%;
+        }
+        &-info{
+            height: calc(100%-40rem);
+        }
+    }
+}
+@include hoverEffect(".blockTeam-main",".blockTeam-content");

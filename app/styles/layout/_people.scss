@@ -1,0 +1,73 @@
+.people{
+    padding:10rem 0 3rem;
+    background-image:linear-gradient(to bottom,rgba($white-color,0.8),rgba($white-color,0.9)),url('../../images/img-people-bg.png');
+    background-size:cover;
+    background-position:center;
+    background-repeat: no-repeat;
+    &-list{
+        margin-top: 5.5rem;
+        @include flexBox(space-between,stretch);
+        flex-wrap: wrap;
+        padding:0 4rem;
+    }
+    &-item{
+        width: calc(50% - 4rem);
+        @include flexBox(flex-start,stretch);
+        margin-bottom: 7rem;
+    }
+    &-avatar{
+        @include size(11.5rem);
+        border-radius: 50%;
+        object-fit:cover;
+        flex-shrink: 0;
+    }
+    &-info{
+        padding-left: 2.5rem;
+    }
+    &-name{
+        text-transform: uppercase;
+        margin-bottom: 1.5rem;
+        font-weight: 500;
+    }
+    &-job{
+        display:inline-block;
+        margin-bottom: 2rem;
+        padding-bottom: 2rem;
+        color:$title-color;
+        font-weight: 500;
+        position: relative;
+        &:after{
+            content: "";
+            @include size(0.4rem,6.5rem);
+            @include bgc($primary-color);
+           position: absolute;
+           left: 0;
+            bottom: 0;
+        }
+    }
+    &-description{
+        line-height: 1.4;
+        display:-webkit-box;
+        -webkit-box-orient:vertical;
+        -webkit-line-clamp:3;
+        white-space: pre-wrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        word-break:break-word;
+    }
+    @include maxWidth(1023px){
+        padding: 5rem 0;
+        &-item{
+            width: calc(100% - 4rem);
+            margin-bottom: 4rem;
+        }
+    }
+    @include maxWidth(767px){
+        &-list{
+            padding: 0;
+        }
+        &-avatar{
+            @include size(6rem);
+        }
+    }
+}

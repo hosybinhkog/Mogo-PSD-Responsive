@@ -1,0 +1,123 @@
+.quote{
+    @include bgc($gray-color-bg);
+    padding:6.5rem 0;
+    &-content{
+        @include flexBox(space-between,center);
+        outline: none;
+    }
+    &-arrow{
+        font-size: 3rem;
+        color:$gray-dark;
+        cursor: pointer;
+        padding:1rem 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &-content{
+        padding-left: 5.5rem;
+        padding-right: 5.5rem;
+    }
+    .slick-arrow{
+        background-color: transparent;
+        border:0;
+        font-size: 3rem;
+        color:$gray-dark;
+        cursor: pointer;
+        padding:1rem 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include absoluteCenter("top");
+        z-index: 10;
+    }
+    .slick-prev{
+        left: 0;
+    }
+    .slick-next{
+        right: 0;
+    }
+    &-icon{
+        width: 15rem;
+        height: 15rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+        border:3px solid $third-color;
+
+    }
+    &-image{
+        width: 22rem;
+        height: 22rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 2.5rem;
+    }
+    &-info{
+        padding-left: 6rem;
+    }
+    &-description{
+        font-size: 2.5rem;
+        font-weight: 300;
+        line-height:1.4;
+        font-family: $secondary-color;
+        margin-bottom: 2.5rem;
+        font-style: italic;
+        color:$text-color;
+        display: -webkit-box;
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+    }
+    &-author{
+        font-family: $third-font;
+        font-size: 2.4rem;
+        position: relative;
+        padding-left:7rem;
+        &::before{
+            content: "";
+            @include absoluteCenter("top");
+            width: 6rem;
+            height: 0.4rem;
+            background-color: $primary-color;
+            left: 0;
+        }
+    }
+    .slick-initialized .slick-slide{
+        display: flex;
+    }
+    @include maxWidth(767px){
+        padding: 2rem 0;
+        &-arrow{
+            display: none; 
+            visibility: hidden;
+        }
+        &-content{
+            padding: 0;
+            flex-direction: column;
+        }
+        &-icon{
+            width: 10rem;
+            height: 10rem;
+            margin-bottom: 2rem;
+            img {
+                max-width: 50%;
+            }
+        }
+        &-info{
+            padding-left: 0;
+        }
+        &-description{
+            display: block;
+            font-size: 1.6rem;
+        }
+        &-author{
+            font-size: 2rem;
+        }
+    }
+}

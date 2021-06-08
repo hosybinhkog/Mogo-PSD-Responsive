@@ -1,0 +1,83 @@
+.work{
+    padding-top: 10rem;
+    &-list{
+        @include flexBox();
+        height: 78rem;
+    }
+    &-column{
+        width: 25%;
+    }
+    &-content{
+        color:$white-color;
+        text-align: center;
+        padding:1rem;
+    }
+    &-icon{
+        font-size: 3ren;
+        margin-bottom: 1.5rem;
+    }
+    &-title{
+        text-transform: uppercase;
+        margin-bottom: 1.5rem;
+        font-weight: 500;
+        line-height: 1.6;
+        display:-webkit-box;
+        -webkit-line-clamp:1;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+        white-space:pre-wrap;
+        word-break: break-all;
+
+
+    }
+    &-description{
+        font-family: $secondary-font;
+        font-size: 1.5rem;
+        font-weight: 300;
+        font-style: italic;
+    }
+    &-image{
+        min-width:100%;
+        max-width:100%;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    &-item{
+        height: 50%;
+    }
+    &-item-full{
+        height: 100%;
+    }
+    @include maxWidth(1600px){
+        &-list{
+            height: 50rem;
+        }
+    }
+    @include maxWidth(1279px){
+        &-list{
+            flex-wrap: wrap;
+            height: auto;
+        }
+        &-column{
+            width: 50%;
+        }
+        &-item{
+            height: 41.5rem;
+        }
+        &-item-full{
+            height: 83rem;
+        }
+    }
+    @include maxWidth(767px){
+
+        &-column{
+            width: 100%;
+        }
+        &-item,&-item-full{
+            height: auto;
+        }
+    }
+}
+@include hoverEffect(".work-item",".work-content","false")

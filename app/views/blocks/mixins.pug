@@ -1,0 +1,64 @@
+mixin menuLink(title,href)
+    li.header-menu-item 
+        a.header-menu-link(href= href)= title 
+mixin headerItemBottom(number,content)
+     .header-bottom-item 
+                span.header-bottom-number= number
+                span.header-bottom-text=content
+
+mixin blockHeader(caption,title,description)
+   .block-header 
+        h3.block-header-caption= caption 
+        h2.block-header-title= title
+        if description
+            a.block-header-description= description
+mixin aboutItem(src,title,iconClass,alt = "")
+    .about-item 
+        img.about-image(src= src,alt= alt)
+        .about-content 
+            i.about-icon(class= iconClass)
+            span.about-banner=title
+mixin number(number,title)
+    .number-item 
+        h4.number-item-count= number
+        span.number-item-text=title
+mixin servicesItem(iconClass,title,description)
+    .services-item 
+        .services-icon
+            i(class= iconClass)
+        .services-content 
+            h3.services-content-title=title
+            .services-content-description= description
+mixin wedoItem(srcImage,title,iconClass,description,activeClass ="")
+    .wedo-item(class= activeClass)
+        .wedo-item-header 
+            img(src= srcImage).wedo-item-icon
+            h3.wedo-item-title= title
+            i(class= iconClass).wedo-item-arrow
+        .wedo-item-content
+            if description
+                p.wedo-item-text= description
+mixin workItem(src="./images/img-work1.png",activeClass="",iconClass ="fa fa-home",title ="UX UI Design",description="Lorem ipsum dolor sit") 
+     .work-item(class= activeClass)
+        img.work-image(src=src)
+        .work-content 
+            i(class= iconClass).work-icon
+            h3.work-title=Tittle
+            span.work-description=description 
+mixin peopleItem(src='./images/img-people4.png',name="Matthew Dix ",title =" Graphic design ",description = "  Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur dicta repellendus eligendi asperiores debitis laborum harum vel nisi eius! Voluptas.")
+    li.people-item 
+        img.people-avatar(src=src)
+        .people-info 
+            h3.people-name=name
+            span.people-job.text.text--normal=title
+            p.people-description.text.text--normal=description
+mixin quoteItem(src='../../images/img-quote.png',type=false,desc="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis cumque unde molestiae, ullam adipisci natus illum delectus? Dicta commodi molestias non",author="join doe")
+    .quote-content 
+        if type == false
+            .quote-icon
+                img(src= src)
+        else 
+            img(src= src).quote-image 
+        .quote-info 
+            p.quote-description= desc
+            span.quote-author=author

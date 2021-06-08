@@ -1,0 +1,141 @@
+.wedo{
+    padding:10rem 0;
+    &-container{
+        @include flexBox(space-between,stretch);
+
+    }
+    &-content ,
+    &-image{
+        width: calc(50% - 1.5rem);
+    }
+    &-image{
+        object-fit: cover;
+    }
+    &-item-header{
+        @include flexBox(flex-start,center);
+        padding: 1.5rem;
+        border: 1px solid $gray-dark;
+        border-radius:0.3rem;
+        cursor: pointer;
+
+    }
+    &-item-icon{
+        margin-right: 1.5rem;
+    }
+    &-item-title{
+        text-transform: uppercase;
+        font-weight: 500;
+        display:-webkit-box;
+        -webkit-line-clamp:1;
+        -webkit-box-orient:vertical;
+        overflow:hidden;    
+        padding-right:2rem;
+    }
+    &-item-arrow{
+        margin-left:auto;
+        font-size: 3rem;
+        font-weight: 400;
+        color:$gray-dark;
+    }
+    &-item-content{
+        padding: 2rem;
+        border: 1px solid $gray-dark;
+        border-radius:0.3rem;
+        border-top:0;
+        font-size: 1.5rem;
+        font-family: $secondary-color;
+        font-style: italic;
+        line-height: 1.6;
+        font-weight: 300;
+        color:$text-color;
+        display: none;
+    }
+    &-item.is-active .wedo-item-content{
+        display: block;
+    }
+    &-item-text{
+        overflow-y:auto;
+        height: 14rem;
+        padding-right: 2rem;
+       
+        &::-webkit-scrollbar{
+            width: 0.6rem;
+            height: 2rem;
+        }
+        &::-webkit-scrollbar-track{
+            box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+            background-color:$gray-light;
+            border-radius:2rem;
+        }
+        &::-webkit-scrollbar-thumb{
+            background-color: $third-color;
+            // outline: 1px solid $third-color;
+            outline:none;
+            border-radius:2rem;
+
+        }
+    }
+    &-item:not(last-child){
+        margin-bottom: 1rem;
+    }
+    @include maxWidth(1230px){
+        
+    }
+    @include maxWidth(767px){
+        padding:4rem 0;
+        &-container{
+            flex-direction: column;
+        }
+        &-image{
+            width: 100%;
+            margin-bottom: 1.5rem;
+        }
+        &-content{
+            width: 100%;
+        }
+        &-item-title{
+            font-size: 1.4rem;
+        }
+        &-item-icon{
+            width: 2.2rem;
+        }
+        &-item-text{
+            font-size: 1.4rem;
+        }
+        &-item-arrow{
+            font-size: 2rem;
+        }
+        &-item-header{
+            padding:1rem;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+// tên file là Demo.java
+// class Class1{
+//     public void output(){
+//         System.out.print("hello vjit")
+//     }
+
+// }
+
+
+// public class demo{
+//     public static void main(String[] args)
+//     {
+//         Class1 a = new Class1;
+//         a.output();
+//     }
+// }
+
+
+
+
+
